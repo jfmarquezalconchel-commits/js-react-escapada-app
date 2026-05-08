@@ -7,6 +7,7 @@ import NotFound from './pages/NotFound.jsx'
 import About from './pages/About.jsx'
 import PlanDetalle from './pages/PlanDetalle.jsx'
 
+
 function AppRouter() {
   return (
     <Routes>
