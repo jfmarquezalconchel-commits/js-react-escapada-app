@@ -120,3 +120,10 @@ export const plans = [
     rating: 4.5,
   },
 ]
+
+
+ 
+
+export const types = [...new Set(plans.map((m)=>{ return m.type;}))];
+export const locations = [...new Set(plans.map((m)=>{ return m.location; }))];
+
