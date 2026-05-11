@@ -22,3 +22,5 @@ function Tarjeta({ plan,isFavorite = false }) {
     </div>
   )
 }
+
+export default Tarjeta;
