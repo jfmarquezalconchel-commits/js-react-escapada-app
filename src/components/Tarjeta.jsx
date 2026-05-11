@@ -1,3 +1,5 @@
+import "./Tarjeta.css";
+
 function Tarjeta({ plan,isFavorite = false }) {
   return (
     <div className="tarjeta">

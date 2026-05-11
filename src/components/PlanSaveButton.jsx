@@ -1,0 +1,1 @@
+import "./PlanSaveButton.css"; function PlanSaveButton({ isSaved }) { return ( <button className="plan-save-button" onClick={() => {}}>{ isSaved ? "Guardado" : "Guardar" } </button> ); } export default PlanSaveButton;
