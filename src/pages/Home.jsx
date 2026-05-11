@@ -1,4 +1,4 @@
-import heroImg from '../assets/hero.png';
+import heroImg from '../assets/hollydays.jpg';
 import relaxImg1 from '../assets/relax1.jpg';
 import relaxImg2 from '../assets/relax2.jpg';
 import relaxImg3 from '../assets/relax3.jpg';
