@@ -3,15 +3,19 @@ import relaxImg1 from '../assets/relax1.jpg';
 import relaxImg2 from '../assets/relax2.jpg';
 import relaxImg3 from '../assets/relax3.jpg';
 import "./Home.css";
+import { useNavigate } from 'react-router-dom';
+import { types } from '../data/plans.js';
 
 function Home() {
+  const navigate = useNavigate();
+
   return (
     <div className="home-page">
       <section className="hero-section">
         <div className="hero-content">
           <h1>Encuentra tu Escape Perfecto</h1>
           <p>Descubre planes de relajación diseñados para recargar energías y encontrar la paz interior</p>
-          <button className="hero-cta">Explorar Planes</button>
+          <button className="hero-cta" onClick={()=>{  navigate("/planes"); }}>Explorar Planes</button>
         </div>
         <div className="hero-image">
           <img src={heroImg} alt="Relax escape" />

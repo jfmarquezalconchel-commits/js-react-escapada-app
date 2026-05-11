@@ -8,6 +8,8 @@
   text-align: center;
   position: relative;
   overflow: hidden;
+  margin-top: 2rem;
+  max-width:90%;
 }
 
 .tarjeta::before {
@@ -53,7 +55,7 @@
   border-radius: 20px;
   font-weight: 600;
   transform: scale(0.8);
-  opacity: 0;
+  opacity: 1;
   transition: all 0.3s ease;
 }
 

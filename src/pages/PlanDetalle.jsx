@@ -1,4 +1,4 @@
-import { useParams, useLocation } from 'react-router-dom';
+import { useParams, useLocation, useNavigate } from 'react-router-dom';
 import "./Planes.css";
 import PlanSaveButton from '../components/PlanSaveButton';
 
@@ -17,6 +17,8 @@ function PlanDetalle() {
     plan.isFavorite=true;
   }
 
+  const navigate = useNavigate();
+
   return (
     <div className="plan-detalle">
       <h1 className="plan-title">{plan.name}</h1>
@@ -28,6 +30,7 @@ function PlanDetalle() {
       <p className="plan-description">Descripcion: {plan.description}</p>
       {plan.isFavorite && <p className="favorite-badge">⭐ Favorito</p>}
       <p><PlanSaveButton id={plan.id} isSaved={plan.isFavorite} /></p>
+      <p><button className="back-button" onClick={(e) => { e.stopPropagation(); navigate(-1); }}>← Volver</button> </p>
     </div>
   );
 }
