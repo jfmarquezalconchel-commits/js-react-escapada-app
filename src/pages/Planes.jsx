@@ -2,10 +2,13 @@ import { plans,types,locations } from '../data/plans.js'
 import Tarjeta from '../components/Tarjeta.jsx'
 import { useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
+import "./Planes.css";
 
 
 function Planes() {
 
+  let favorites=localStorage.getItem("favorites");
+  favorites = (favorites==null ? [] : JSON.parse(favorites));
 
   let [params,setParams] = useSearchParams();
 
@@ -34,19 +37,23 @@ function Planes() {
 
   return (
     <div>
-      <h1>Planes</h1>
-      <p>Planes Disponibles</p>
-      <label htmlFor="query">Buscar:</label>
-      <input type="text" name='query' id="query"  onChange={(event)=>updateParam('q',event.target.value)}/>
-      <select name="type" onChange={(event)=> updateParam('type',event.target.value)}>
-        <option key="" value="">Todos</option>
-        {types.map((n)=>(<option key={n} value={n}>{n.toUpperCase()}</option>))}
-      </select>
+      <div className="planes-header">
+        <h1>Planes</h1>
+        <p>Planes Disponibles</p>
+      </div>
+      <div className="search-form">
+        <label htmlFor="query">Buscar:</label>
+        <input type="text" name='query' id="query" onChange={(event)=>updateParam('q',event.target.value)} />
+        <select name="type" onChange={(event)=> updateParam('type',event.target.value)}>
+          <option key="" value="">Todos</option>
+          {types.map((n)=>(<option key={n} value={n}>{n.toUpperCase()}</option>))}
+        </select>
+      </div>
 
 
       <section>
       {selected.map((plan) => (
-        <Tarjeta key={plan.id} plan={plan} />
+        <Tarjeta key={plan.id} plan={plan} isFavorite={ favorites.includes(plan.id)}/>
       ))}
       </section>
 
